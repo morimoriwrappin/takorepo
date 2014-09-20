@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920073214) do
+ActiveRecord::Schema.define(version: 20140920081027) do
 
   create_table "ikas", force: true do |t|
     t.integer  "user_id"
@@ -33,7 +33,10 @@ ActiveRecord::Schema.define(version: 20140920073214) do
     t.string   "msg"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ika_id"
   end
+
+  add_index "takos", ["ika_id"], name: "index_takos_on_ika_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
