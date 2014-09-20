@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tako.name %>
+</p>
+
+<p>
+  <strong>Msg:</strong>
+  <%= @tako.msg %>
+</p>
+
+<%= link_to 'Edit', edit_tako_path(@tako) %> |
+<%= link_to 'Back', takos_path %>
