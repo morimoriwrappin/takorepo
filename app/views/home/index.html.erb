@@ -1,2 +1,20 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if user_signed_in? -%>
+  <br><br><br><br><br>
+  <%= form_for(Ika.new, html: { class: "form-inline" }) do |f| %>
+    <div class="form-group">
+      <%= f.text_field :page_name, class: "form-control", size: 40 %>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">つくる</button>
+    </div>
+  <% end -%>
+<% else -%>
+  <ul>
+    <li>
+      <%= link_to "Facebookアカウントで登録する", "#" %>
+    </li>
+    <li>
+      <%= link_to "メールアドレスで登録する", new_user_registration_path %>
+    </li>
+  </ul>
+<% end -%>

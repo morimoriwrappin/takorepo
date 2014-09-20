@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140920073214) do
     t.datetime "background_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "page_name"
   end
 
   add_index "ikas", ["user_id"], name: "index_ikas_on_user_id"
