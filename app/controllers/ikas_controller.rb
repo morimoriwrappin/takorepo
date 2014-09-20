@@ -26,7 +26,7 @@ class IkasController < ApplicationController
     @ika.user = current_user
 
     if @ika.save
-      redirect_to edit_ika_url(@ika)
+      redirect_to @ika
     else
       render :new
     end
