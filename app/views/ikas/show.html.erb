@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if @ika.background.exists? -%>
+  <%= image_tag @ika.background.url %>
+<% end -%>
+
 <p>
   <strong>Title:</strong>
   <%= @ika.title %>
@@ -9,15 +13,6 @@
   <strong>Description:</strong>
   <%= @ika.description %>
 </p>
-
-<p>
-  <strong>Background:</strong>
-  <% if @ika.background.exists? -%>
-  <%= image_tag @ika.background.url %>
-  <% end -%>
-</p>
-
-<hr>
 
 <p>
   <strong><%= @ika.title %>さんのtako一覧</strong><br />
