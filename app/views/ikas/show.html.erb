@@ -14,5 +14,12 @@
   <%= @ika.description %>
 </p>
 
+<p>
+  <strong><%= @ika.title %>さんのtako一覧</strong><br />
+  <% @ika.takos.each do |tako| %>
+  <%= tako.name %>:::<%= tako.msg %><br />
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_ika_path(@ika) %> |
 <%= link_to 'Back', ikas_path %>
