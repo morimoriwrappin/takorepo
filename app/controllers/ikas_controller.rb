@@ -26,7 +26,7 @@ class IkasController < ApplicationController
     @ika.user = current_user
 
     if @ika.save
-      redirect_to @ika
+      redirect_to "/#{@ika.page_name}"
     else
       render :new
     end
@@ -35,7 +35,7 @@ class IkasController < ApplicationController
   # PATCH/PUT /ikas/1
   def update
     if @ika.update(ika_params)
-      redirect_to @ika, notice: 'Ika was successfully updated.'
+      redirect_to "/#{@ika.page_name}"
     else
       render :edit
     end
@@ -45,6 +45,13 @@ class IkasController < ApplicationController
   def destroy
     @ika.destroy
     redirect_to ikas_url, notice: 'Ika was successfully destroyed.'
+  end
+
+  def show_by_name
+    @ika = Ika.where(page_name: params[:ika_name]).first
+    if @ika
+      render 'show'
+    end
   end
 
   private
