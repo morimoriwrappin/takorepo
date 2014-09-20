@@ -26,7 +26,7 @@ class IkasController < ApplicationController
     @ika.user = current_user
 
     if @ika.save
-      redirect_to @ika, notice: 'Ika was successfully created.'
+      redirect_to edit_ika_url(@ika)
     else
       render :new
     end
@@ -55,6 +55,6 @@ class IkasController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ika_params
-      params.require(:ika).permit(:user_id, :title, :description, :background)
+      params.require(:ika).permit(:user_id, :title, :description, :background, :page_name)
     end
 end
