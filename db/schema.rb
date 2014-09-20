@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920061841) do
+ActiveRecord::Schema.define(version: 20140920071121) do
 
   create_table "ikas", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140920061841) do
     t.datetime "background_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "page_name"
   end
 
   add_index "ikas", ["user_id"], name: "index_ikas_on_user_id"
