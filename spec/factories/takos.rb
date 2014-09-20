@@ -2,8 +2,7 @@
 
 FactoryGirl.define do
   factory :tako do
-    Tako "MyString"
     name "MyString"
-    tako_msg "MyString"
+    msg "MyString"
   end
 end

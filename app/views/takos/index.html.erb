@@ -1,0 +1,27 @@
+<h1>Listing takos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Msg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @takos.each do |tako| %>
+      <tr>
+        <td><%= tako.name %></td>
+        <td><%= tako.msg %></td>
+        <td><%= link_to 'Show', tako %></td>
+        <td><%= link_to 'Edit', edit_tako_path(tako) %></td>
+        <td><%= link_to 'Destroy', tako, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tako', new_tako_path %>

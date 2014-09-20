@@ -1,4 +1,6 @@
 Takorepo::Application.routes.draw do
+  resources :takos
+
   get 'home/index'
 
   resources :ikas

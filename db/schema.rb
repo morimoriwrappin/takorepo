@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140920071121) do
+ActiveRecord::Schema.define(version: 20140920073214) do
 
   create_table "ikas", force: true do |t|
     t.integer  "user_id"
@@ -29,9 +29,8 @@ ActiveRecord::Schema.define(version: 20140920071121) do
   add_index "ikas", ["user_id"], name: "index_ikas_on_user_id"
 
   create_table "takos", force: true do |t|
-    t.string   "Tako"
     t.string   "name"
-    t.string   "tako_msg"
+    t.string   "msg"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
