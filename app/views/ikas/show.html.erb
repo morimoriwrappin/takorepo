@@ -17,7 +17,7 @@
 <p>
   <strong><%= @ika.title %>さんのtako一覧</strong><br />
   <% @ika.takos.each do |tako| %>
-  <%= tako.name %>:::<%= tako.msg %><br />
+  お名前:<%= tako.name %><img src="/spacer.gif" width="20px">応援メッセージ:<%= tako.msg %><br />
   <% end %>
 </p>
 
