@@ -1,0 +1,27 @@
+<h1>Listing ikas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ikas.each do |ika| %>
+      <tr>
+        <td><%= ika.title %></td>
+        <td><%= ika.description %></td>
+        <td><%= link_to 'Show', ika %></td>
+        <td><%= link_to 'Edit', edit_ika_path(ika) %></td>
+        <td><%= link_to 'Destroy', ika, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ika', new_ika_path %>

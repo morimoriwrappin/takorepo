@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ika.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ika.description %>
+</p>
+
+<p>
+  <strong>Background:</strong>
+  <% if @ika.background.exists? -%>
+  <%= image_tag @ika.background.url %>
+  <% end -%>
+</p>
+
+<%= link_to 'Edit', edit_ika_path(@ika) %> |
+<%= link_to 'Back', ikas_path %>

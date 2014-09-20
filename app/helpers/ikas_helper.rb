@@ -1,0 +1,2 @@
+module IkasHelper
+end
